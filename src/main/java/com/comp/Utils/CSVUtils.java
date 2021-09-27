@@ -10,9 +10,11 @@ import java.util.List;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.stereotype.Component;
 
 import com.comp.model.Employee;
 
+@Component
 public class CSVUtils {
 	
 	public List<Employee> parseCSV(InputStream is) {

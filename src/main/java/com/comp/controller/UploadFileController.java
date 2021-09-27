@@ -14,7 +14,7 @@ import com.comp.Service.FileService;
 public class UploadFileController {
 	
 	@Autowired
-	FileService fileService;
+	private FileService fileService;
 	
 	 @GetMapping("/")
 	    public String index() {

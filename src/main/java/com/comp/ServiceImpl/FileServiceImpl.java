@@ -11,18 +11,32 @@ import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.comp.EmployeeRepository.EmployeeRepository;
 import com.comp.Service.FileService;
 import com.comp.Utils.CSVUtils;
+import com.comp.model.Employee;
 
 public class FileServiceImpl implements FileService{
 	
 	@Autowired
 	CSVUtils csvUtils;
+	
+	@Autowired
+	EmployeeRepository repo;
 
 	@Override
 	public void store(MultipartFile file) {
 		
-		csvUtils.parseCSV(file);
+		List<Employee> employees;
+		try {
+			employees = csvUtils.parseCSV(file.getInputStream());
+			repo.saveAll(employees);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		  }
 		
 	}

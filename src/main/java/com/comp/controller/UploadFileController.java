@@ -16,16 +16,11 @@ public class UploadFileController {
 	
 	@Autowired
 	private FileService fileService;
-	
-	 @GetMapping("/")
-	    public String index() {
-	        return "index";
-	    }
-	 
-	 @PostMapping("/")
+
+	 @PostMapping("/UploadCSV")
 	    public String uploadMultipartFile(@RequestParam("uploadfile") MultipartFile file) {
 			fileService.store(file);
-	        return "index";
+	        return "uploadFile";
 	    }
 }
 

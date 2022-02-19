@@ -31,13 +31,14 @@ public class FileServiceImpl implements FileService{
 		
 		List<Employee> employees;
 		try {
-			employees = csvUtils.parseCSV(file.getInputStream());
+			employees = csvUtils.read(Employee.class, file.getInputStream());
 			repo.saveAll(employees);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			throw new RuntimeException("Error in reading the file : " + e.getLocalizedMessage());
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		
 		  }
 		

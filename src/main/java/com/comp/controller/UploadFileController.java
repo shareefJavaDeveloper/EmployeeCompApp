@@ -17,7 +17,7 @@ public class UploadFileController {
 	@Autowired
 	private FileService fileService;
 
-	 @PostMapping("/UploadCSV")
+	 @PostMapping(value = "/UploadCSV", consumes = "multipart/form-data")
 	    public String uploadMultipartFile(@RequestParam("uploadfile") MultipartFile file) {
 			fileService.store(file);
 	        return "uploadFile";

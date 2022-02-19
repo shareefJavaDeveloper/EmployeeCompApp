@@ -18,7 +18,7 @@
 		<div class="row h-100 justify-content-center align-items-center">
 			<div class="col-sm-5">
 				<h3>Upload CSV File Here</h3>
-				<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+				<form method="POST" enctype="multipart/form-data" id="fileUploadForm" action="/UploadCSV">
 					<div class="form-group">
 						<label class="control-label" for="uploadfile">Upload File:</label>
 						<input type="file" class="form-control" id="uploadfile" placeholder="Upload File"  name="uploadfile"></input>

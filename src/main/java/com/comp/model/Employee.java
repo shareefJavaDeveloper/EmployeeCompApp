@@ -12,35 +12,32 @@ import javax.persistence.Id;
 
 @Entity
 @Table(name = "employee")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Employee {
 	
 	@Id
-	private long employeeId;
+	public long employeeId;
 	
 	@Column(name = "name")
-	private String name;
+	public String name;
 	
 	@Column(name = "address")
-	private String address;
+	public String address;
 	
 	@Column(name = "basic")
-	private long basic;
+	public long basic;
 	
 	@Column(name = "houseRentalAllowance")
-	private long houseRentalAllowance;
+	public long houseRentalAllowance;
 	
 	@Column(name="conveyanceAllowance")
-	private long conveyanceAllowance;
+	public long conveyanceAllowance;
 	
 	@Column(name="medicalAllowance")
-	private long medicalAllowance;
+	public long medicalAllowance;
 	
 	@Column(name="specialAllowance")
-	private long specialAllowance;
+	public long specialAllowance;
 	
 	@Column(name="AdvanceStatuatoryBonus")
-	private long AdvanceStatuatoryBonus;
+	public long AdvanceStatuatoryBonus;
 }
